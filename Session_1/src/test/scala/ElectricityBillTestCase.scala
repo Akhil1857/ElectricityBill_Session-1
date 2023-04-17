@@ -16,8 +16,12 @@ class ElectricityBillTestCase extends AnyFunSuite {
     assert(account.totalBillAmount() == 3542.95)
   }
 
+  test("totalBillAmount() should give bill for units consumed more than 450 ") {
+    val account = ElectricityBillCalculator(21, "Akhil", "Delhi", 502, 5904)
+    assert(account.totalBillAmount() == 52810.31)
+  }
   test("totalBillAmount() should give correct bill for units consumed more than 450 ") {
-    val account = ElectricityBillCalculator(21, "Akhil", "Delhi", 5062, 5904)
+    val account = ElectricityBillCalculator(21, "Manish", "Delhi", 5062, 5904)
     assert(account.totalBillAmount() == 7073.51)
   }
 
